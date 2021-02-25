@@ -1,0 +1,38 @@
+.page-title,
+.page-subtitle {
+  font-family: $font-montserrat;
+}
+
+.page-title {
+  font-size: 3.6rem;
+  font-weight: $font-semibold;
+  line-height: 4.4rem;
+  margin-bottom: 1.4rem;
+  color: $color-dark-blue;
+
+  // @include respond(phone) {
+  //   font-size: 2.4rem;
+  //   line-height: 3rem;
+  // }
+}
+
+.page-subtitle {
+  font-size: 1.8rem;
+  font-weight: $font-light;
+  color: $color-dark-blue;
+}
+
+.header-title {
+  font-weight: $font-black;
+  color: $color-white;
+  font-size: 7.2rem;
+  line-height: 8.8rem;
+  margin-bottom: 1rem;
+}
+
+.header-subtitle {
+  color: $color-primary;
+  font-size: 3.6rem;
+  font-weight: $font-bold;
+  margin-bottom: 1rem;
+}

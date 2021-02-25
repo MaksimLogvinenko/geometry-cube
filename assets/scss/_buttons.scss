@@ -1,0 +1,59 @@
+.btn {
+    &,
+    &:link,
+    &:visited {
+      display: inline-block;
+      font-size: 1.8rem;
+      font-family: $font-montserrat;
+      font-weight: $font-bold;
+      text-decoration: none;
+      letter-spacing: 0.1rem;
+      position: relative;
+      transition: all 0.4s;
+      text-align: center;
+      outline: none;
+      border: none;
+      box-shadow: $shadow-default;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+    // DESIGN CLASSES
+    &--primary,
+    &--secondary {
+      color: $color-white;
+      border-radius: $border-radius-default;
+    }
+    &--message {
+      background-color: $color-light-blue;
+      padding: 0.8rem;
+      color: $color-white;
+      border-radius: $border-radius-default;
+      &:hover {
+        background-color: lighten($color-light-blue, 10%);
+      }
+    }
+    &--primary {
+      background-color: $color-primary;
+      &:hover {
+        background-color: darken($color-primary, 10%);
+      }
+    }
+    &--secondary {
+      background-color: $color-light-blue;
+      &:hover {
+        background-color: lighten($color-light-blue, 10%);
+      }
+    }
+
+    &--big {
+      padding: 2rem 3.5rem;
+    }
+    &--medium {
+      padding: 1.2rem 1rem;
+      width: 23rem;
+    }
+    &--small {
+      padding: 1rem 1.2rem;
+    }
+  }

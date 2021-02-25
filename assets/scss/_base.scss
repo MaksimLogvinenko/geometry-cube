@@ -1,0 +1,36 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+  text-size-adjust: none;
+
+  @include respond(tab-land) {
+    font-size: 7.5px;
+  }
+  @include respond(tab-port) {
+    font-size: 7px;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  color: $color-dark-blue;
+  font-family: $font-montserrat;
+  font-weight: $font-regular;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: $color-dark-blue;
+  color: $color-white;
+}
