@@ -37,7 +37,8 @@ export default {
   ** Global CSS
   */
  css: [
-  "@/assets/scss/main.scss"
+  "@/assets/scss/main.scss",
+  'swiper/swiper-bundle.css'
 ],
 modules: [
   "@nuxtjs/style-resources",
@@ -51,6 +52,7 @@ styleResources: {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    { src: "plugins/swiper", ssr: false },
   ],
   /*
   ** Auto import components

@@ -75,6 +75,9 @@ export default {
     width: 50%;
     border-bottom: 4px dashed $color-light-blue;
     top: 50%;
+    @include respond(tab-port) {
+    display: none;
+    }
   }
 }
 .card__item {
@@ -91,6 +94,9 @@ export default {
   transition: transform 0.3s ease;
   &:hover {
     transform: scale(1.05);
+  }
+  @include respond(phone) {
+    width: 100%;
   }
 }
 .card__image {
