@@ -38,7 +38,7 @@ export default {
   */
  css: [
   "@/assets/scss/main.scss",
-  'swiper/swiper-bundle.css'
+  'swiper/css/swiper.min.css'
 ],
 modules: [
   "@nuxtjs/style-resources",
