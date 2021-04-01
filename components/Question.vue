@@ -67,6 +67,12 @@ export default {
   color: $color-dark-blue;
   border-bottom: 3px solid $color-dark-gray;
   cursor: pointer;
+  @include respond(tab-port) {
+    width: 80%;
+  }
+  @include respond(phone) {
+    width: 100%;
+  }
 }
 i {
   position: absolute;

@@ -16,6 +16,7 @@
     <advantages />
     <gallery-card />
     <question />
+    <reviews />
   </div>
 </template>
 
@@ -24,9 +25,9 @@ import Navbar from "@/components/Navbar";
 import Advantages from "@/components/Advantages";
 import GalleryCard from "@/components/GalleryCard";
 import Question from "@/components/Question";
+import Reviews from "@/components/Reviews";
 export default {
-  components: { Navbar, Advantages, GalleryCard, Question },
-  
+  components: { Navbar, Advantages, GalleryCard, Question, Reviews },
 };
 </script>
 
