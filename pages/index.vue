@@ -17,6 +17,7 @@
     <gallery-card />
     <question />
     <reviews />
+    <footer-section />
   </div>
 </template>
 
@@ -26,8 +27,9 @@ import Advantages from "@/components/Advantages";
 import GalleryCard from "@/components/GalleryCard";
 import Question from "@/components/Question";
 import Reviews from "@/components/Reviews";
+import FooterSection from "@/components/FooterSection";
 export default {
-  components: { Navbar, Advantages, GalleryCard, Question, Reviews },
+  components: { Navbar, Advantages, GalleryCard, Question, Reviews, FooterSection},
 };
 </script>
 
