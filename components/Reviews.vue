@@ -53,7 +53,7 @@ export default {
       grabCursor: true,
       pagination: {
         el: ".swiper-pagination",
-        clickable: true,
+        dynamicBullets: true
       },
     },
     comments: [
@@ -67,6 +67,18 @@ export default {
       {
         name: "Victor Korzh",
         city: "Ukraine, Fastiv",
+        mark: "9",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+      },
+      {
+        name: "Vladislav Kvasha",
+        city: "England, London",
+        mark: "8",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing i nam sadaw qdasd q a",
+      },
+      {
+        name: "Oleg Miami",
+        city: "Ukraine, Mexico",
         mark: "9",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing",
       },
@@ -92,6 +104,10 @@ export default {
   top: 50%;
   transform: translateY(-50%);
   border-radius: $border-radius-default;
+  @include respond (phone) {
+    width: 100%;
+    padding: 4rem;
+  }
 }
 .reviews-col {
   display: flex;
@@ -125,5 +141,8 @@ export default {
   margin-top: 5rem;
   font-size: 1.8rem;
   font-weight: $font-light;
+  @include respond (phone) {
+    margin-top: 3rem;
+  }
 }
 </style>
