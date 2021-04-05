@@ -13,7 +13,7 @@
             <div class="reviews-col">
               <div class="reviews-col-up">
                 <img
-                  src="@/static/images/svg/user.svg"
+                  :src="require(`@/static/images/users/${comment.img}.jpg`)"
                   alt=""
                   class="reviews__photo"
                 />
@@ -53,7 +53,7 @@ export default {
       grabCursor: true,
       pagination: {
         el: ".swiper-pagination",
-        dynamicBullets: true
+        dynamicBullets: true,
       },
     },
     comments: [
@@ -61,6 +61,7 @@ export default {
         name: "John Petuk",
         city: "Ukraine, Kyiv",
         mark: "10",
+        img: "user-1",
         text:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas",
       },
@@ -68,18 +69,22 @@ export default {
         name: "Victor Korzh",
         city: "Ukraine, Fastiv",
         mark: "9",
+        img: "user-2",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing",
       },
       {
         name: "Vladislav Kvasha",
         city: "England, London",
         mark: "8",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing i nam sadaw qdasd q a",
+        img: "user-3",
+        text:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing i nam sadaw qdasd q a",
       },
       {
         name: "Oleg Miami",
         city: "Ukraine, Mexico",
         mark: "9",
+        img: "user-4",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing",
       },
     ],
@@ -104,7 +109,7 @@ export default {
   top: 50%;
   transform: translateY(-50%);
   border-radius: $border-radius-default;
-  @include respond (phone) {
+  @include respond(phone) {
     width: 100%;
     padding: 4rem;
   }
@@ -116,6 +121,12 @@ export default {
 .reviews-col-up {
   display: flex;
   align-items: center;
+}
+.reviews__photo {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  object-fit: cover;
 }
 .reviews-info {
   margin-left: 1rem;
@@ -141,7 +152,7 @@ export default {
   margin-top: 5rem;
   font-size: 1.8rem;
   font-weight: $font-light;
-  @include respond (phone) {
+  @include respond(phone) {
     margin-top: 3rem;
   }
 }

@@ -46,7 +46,7 @@
 
             <div class="contact-form__group">
               <label for="">Name <span>*</span></label>
-              <textarea required name="" id="" cols="30" rows="5"></textarea>
+              <textarea required name="" id="" cols="30" rows="3"></textarea>
             </div>
             <button
               :disabled="invalid"

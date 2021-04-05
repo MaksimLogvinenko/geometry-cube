@@ -2,13 +2,15 @@
   <div>
     <div class="navbar-mobile">
       <div class="nav-mobile">
-        <a href="#" class="nav__logo-mobile"
+        <nuxt-link tag="a" to="/" href="#" class="nav__logo-mobile"
           ><img src="../static/images/svg/logo.svg" alt=""
-        /></a>
+        /></nuxt-link>
         <h4 class="nav-logo__title">QubeFeatures</h4>
-        <a @click.prevent="showNav = !showNav" href="#"><img src="@/static/images/svg/bar.svg" alt="" /></a>
+        <a @click.prevent="showNav = !showNav" href="#"
+          ><img src="@/static/images/svg/bar.svg" alt=""
+        /></a>
       </div>
-        <ul class="menu__group-mobile" :class="{'open': showNav}">
+      <ul class="menu__group-mobile" :class="{ open: showNav }">
         <nuxt-link
           v-for="link of links"
           :key="link.url"
@@ -59,8 +61,15 @@ export default {
       { title: "Portfolio", url: "/portfolio" },
       { title: "Contact", url: "/contact" },
     ],
-    showNav: false
+    showNav: false,
   }),
+  watch: {
+    $route() {
+      setTimeout(() => {
+        this.showNav = false;
+      }, 300);
+    },
+  },
   methods: {},
 };
 </script>
@@ -147,9 +156,8 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  transition: .3s;
+  transition: 0.3s;
   transform: translateY(-100%);
-  
 }
 .open {
   transform: translateY(0);

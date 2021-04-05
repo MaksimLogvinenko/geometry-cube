@@ -43,6 +43,16 @@ export default {
         open: false,
         subtitle: ["Напиши в сообщения группы ВКонтакте и мы попробуем найти решение альтернативами вроде DonationAlerts :)"],
       },
+      {
+        title: "Я оплатил, что дальше?",
+        open: false,
+        subtitle: ["subtitle-2"],
+      },
+      {
+        title: "Я не из России, как мне оплатить товар?",
+        open: false,
+        subtitle: ["Напиши в сообщения группы ВКонтакте и мы попробуем найти решение альтернативами вроде DonationAlerts :)"],
+      },
     ],
   }),
   methods: {},
@@ -61,7 +71,7 @@ export default {
   display: flex;
   flex-direction: column;
   padding: 2rem 2rem;
-  width: 60%;
+  width: 70%;
   margin: 0 auto;
   text-decoration: none;
   color: $color-dark-blue;
@@ -86,7 +96,7 @@ i {
   }
 }
 .question__title {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: $font-bold;
 }
 </style>
