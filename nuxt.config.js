@@ -29,24 +29,24 @@ export default {
     google: {
       families: [
         "Montserrat:300,400,500,600,700,900&display=swap",
-        "Source Sans Pro:400,600,700&display=swap"
+        "Roboto:400;900&display=swap"
       ]
     }
   },
   /*
   ** Global CSS
   */
- css: [
-  "@/assets/scss/main.scss",
-  'swiper/css/swiper.min.css'
-],
-modules: [
-  "@nuxtjs/style-resources",
-  "nuxt-webfontloader",
-],
-styleResources: {
-  scss: ["@/assets/scss/_mixins.scss", "@/assets/scss/_variables.scss"]
-},
+  css: [
+    "@/assets/scss/main.scss",
+    'swiper/css/swiper.min.css'
+  ],
+  modules: [
+    "@nuxtjs/style-resources",
+    "nuxt-webfontloader",
+  ],
+  styleResources: {
+    scss: ["@/assets/scss/_mixins.scss", "@/assets/scss/_variables.scss"]
+  },
   /*
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
@@ -77,5 +77,11 @@ styleResources: {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+    transpile: [
+      "vee-validate/dist/rules"
+    ],
+    extend(config, ctx) {
+      // ...
+    }
   }
 }

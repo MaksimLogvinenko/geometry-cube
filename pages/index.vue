@@ -1,5 +1,11 @@
 <template>
   <div>
+    <transition name="show-modal">
+      <modal-question
+        v-if="modalQuestionOpen"
+        @closeModalQuestion="closeModalQuestion"
+      />
+    </transition>
     <div class="header">
       <navbar />
       <div class="header-content">
@@ -9,7 +15,12 @@
             Let’s Create A <br />
             Better Tomorrow
           </h1>
-          <a href="#" class="btn btn--primary btn--big">Download Now </a>
+          <a
+            href="#"
+            @click.prevent="openModalQuestion"
+            class="btn btn--primary btn--big"
+            >Download Now
+          </a>
         </div>
       </div>
     </div>
@@ -28,8 +39,28 @@ import GalleryCard from "@/components/GalleryCard";
 import Question from "@/components/Question";
 import Reviews from "@/components/Reviews";
 import FooterSection from "@/components/FooterSection";
+import ModalQuestion from "@/components/ModalQuestion";
 export default {
-  components: { Navbar, Advantages, GalleryCard, Question, Reviews, FooterSection},
+  data: () => ({
+    modalQuestionOpen: false,
+  }),
+  components: {
+    Navbar,
+    Advantages,
+    GalleryCard,
+    Question,
+    Reviews,
+    FooterSection,
+    ModalQuestion,
+  },
+  methods: {
+    openModalQuestion() {
+      this.modalQuestionOpen = true;
+    },
+    closeModalQuestion() {
+      this.modalQuestionOpen = false;
+    },
+  },
 };
 </script>
 
@@ -43,5 +74,13 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.show-modal-enter-active,
+.show-modal-leave-active {
+  transition: opacity 0.5s;
+}
+.show-modal-enter,
+.show-modal-leave-to {
+  opacity: 0;
 }
 </style>
