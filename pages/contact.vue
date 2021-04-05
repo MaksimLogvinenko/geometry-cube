@@ -1,12 +1,14 @@
 <template>
-    <div class="container">
-        <contact-cards />
-    </div>
+  <div>
+    <contact-cards />
+    <contact-form />
+  </div>
 </template>
 
 <script>
-import ContactCards from '@/components/ContactCards';
+import ContactCards from "@/components/ContactCards";
+import ContactForm from "@/components/ContactForm";
 export default {
-    components: {ContactCards}
-}
+  components: { ContactCards, ContactForm },
+};
 </script>

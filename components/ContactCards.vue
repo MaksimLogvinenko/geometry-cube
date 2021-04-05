@@ -1,22 +1,26 @@
 <template>
   <section class="section-contact-card">
-    <div class="contact-card">
-      <div
-        class="contact-card__item"
-        v-for="(contactCard, contactCardIndex) of contactCards"
-        :key="contactCardIndex"
-      >
-        <img
-          :src="require(`@/static/images/svg/${contactCard.image}.svg`)"
-          :alt="contactCard.alt"
-          class="contact-card__img"
-        />
-        <div class="contact-card__info">
-          <h3 class="contact-card__title">{{ contactCard.title }}</h3>
-          <a href="#" class="contact-card__link">{{ contactCard.firstLink }}</a>
-          <a href="#" class="contact-card__link">{{
-            contactCard.secondLink
-          }}</a>
+    <div class="container">
+      <div class="contact-card">
+        <div
+          class="contact-card__item"
+          v-for="(contactCard, contactCardIndex) of contactCards"
+          :key="contactCardIndex"
+        >
+          <img
+            :src="require(`@/static/images/svg/${contactCard.image}.svg`)"
+            :alt="contactCard.alt"
+            class="contact-card__img"
+          />
+          <div class="contact-card__info">
+            <h3 class="contact-card__title">{{ contactCard.title }}</h3>
+            <a href="#" class="contact-card__link">{{
+              contactCard.firstLink
+            }}</a>
+            <a href="#" class="contact-card__link">{{
+              contactCard.secondLink
+            }}</a>
+          </div>
         </div>
       </div>
     </div>
