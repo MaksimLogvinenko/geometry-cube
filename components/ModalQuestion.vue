@@ -120,7 +120,7 @@ export default {
   }
   @include respond (phone) {
     width: 80%;
-    top: 15%;
+    top: 15% ;
   }
   .modal-question__form {
     display: flex;

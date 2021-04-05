@@ -24,6 +24,7 @@ body {
   color: $color-dark-blue;
   font-family: $font-montserrat;
   font-weight: $font-regular;
+  background-color: #F3F6FA;
 
   @include respond(tab-port) {
     padding: 0;

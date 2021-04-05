@@ -7,7 +7,6 @@
       />
     </transition>
     <div class="header">
-      <navbar />
       <div class="header-content">
         <div class="container">
           <h2 class="header-subtitle">Make A Difference</h2>
@@ -28,29 +27,24 @@
     <gallery-card />
     <question />
     <reviews />
-    <footer-section />
   </div>
 </template>
 
 <script>
-import Navbar from "@/components/Navbar";
 import Advantages from "@/components/Advantages";
 import GalleryCard from "@/components/GalleryCard";
 import Question from "@/components/Question";
 import Reviews from "@/components/Reviews";
-import FooterSection from "@/components/FooterSection";
 import ModalQuestion from "@/components/ModalQuestion";
 export default {
   data: () => ({
     modalQuestionOpen: false,
   }),
   components: {
-    Navbar,
     Advantages,
     GalleryCard,
     Question,
     Reviews,
-    FooterSection,
     ModalQuestion,
   },
   methods: {
