@@ -28,8 +28,8 @@
     <div class="navbar">
       <div class="container">
         <div class="nav">
-          <a href="#" class="nav__logo"
-            ><img src="@/static/images/svg/logo.svg" alt="" />QubeFeatures</a
+          <nuxt-link to="/" tag="a" class="nav__logo"
+            ><img src="@/static/images/svg/logo.svg" alt="" />QubeFeatures</nuxt-link
           >
           <div class="nav__menu">
             <ul class="menu__group">
@@ -58,7 +58,7 @@ export default {
     links: [
       { title: "Home", url: "/", exact: true },
       { title: "About Us", url: "/about" },
-      { title: "Portfolio", url: "/portfolio" },
+      { title: "Gallery", url: "/gallery" },
       { title: "Contact", url: "/contact" },
     ],
     showNav: false,
@@ -162,9 +162,13 @@ export default {
 .open {
   transform: translateY(0);
 }
+.menu__group-mobile {
+  list-style: none;
+}
 .menu__link-mobile {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
+  margin-right: 2rem;
 }
 .menu__item-mobile {
   font-size: 2.4rem;

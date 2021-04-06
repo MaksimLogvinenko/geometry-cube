@@ -9,7 +9,7 @@ export default {
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
   */
-  target: 'server',
+
   /*
   ** Headers of the page
   ** See https://nuxtjs.org/api/configuration-head
@@ -53,6 +53,8 @@ export default {
   */
   plugins: [
     { src: "plugins/swiper", ssr: false },
+    { src: "plugins/vue-gallery.js", mode: "client" },
+    { src: "plugins/vue-lazyload.js" },
   ],
   /*
   ** Auto import components
@@ -83,5 +85,5 @@ export default {
     extend(config, ctx) {
       // ...
     }
-  }
+  },
 }
