@@ -23,22 +23,22 @@ export default {
   data: () => ({
     galleryLinks: [
       {
-        img: require("@/static/images/gallery/kitchen/1.jpg"),
+        img: require("@/static/images/gallery/1.jpeg"),
         url: "/kitchen",
         title: "Кухни",
       },
       {
-        img: require("@/static/images/gallery/kitchen/2.jpg"),
+        img: require("@/static/images/gallery/2.jpeg"),
         url: "/kitchen",
         title: "Мебель для комнат",
       },
       {
-        img: require("@/static/images/gallery/kitchen/3.jpg"),
+        img: require("@/static/images/gallery/3.jpeg"),
         url: "/kitchen",
         title: "Мебель для не комнат",
       },
       {
-        img: require("@/static/images/gallery/kitchen/1.jpg"),
+        img: require("@/static/images/gallery/4.jpeg"),
         url: "/kitchen",
         title: "Антон",
       },

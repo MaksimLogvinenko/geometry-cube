@@ -33,12 +33,12 @@ export default {
   data: function () {
     return {
       images: [
-        require("@/static/images/gallery/kitchen/1.jpg"),
-        require("@/static/images/gallery/kitchen/2.jpg"),
-        require("@/static/images/gallery/kitchen/1.jpg"),
-        require("@/static/images/gallery/kitchen/3.jpg"),
-        require("@/static/images/gallery/kitchen/1.jpg"),
-        require("@/static/images/gallery/kitchen/3.jpg"),
+        require("@/static/images/gallery/kitchen/3.jpeg"),
+        require("@/static/images/gallery/kitchen/2.jpeg"),
+        require("@/static/images/gallery/kitchen/3.jpeg"),
+        require("@/static/images/gallery/kitchen/4.jpeg"),
+        require("@/static/images/gallery/kitchen/5.jpeg"),
+        require("@/static/images/gallery/kitchen/6.jpeg"),
       ],
       index: null,
     };
