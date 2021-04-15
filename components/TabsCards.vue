@@ -37,8 +37,8 @@
       <transition-group class="projects" name="projects">
         <div
           class="project"
-          :key="projectIndex"
-          v-for="(project, projectIndex) in projects"
+          :key="project.title"
+          v-for="project in projects"
           v-show="currentFilter === project.category || currentFilter === 'ALL'"
         >
           <div class="project-image-wrapper">
@@ -117,12 +117,6 @@ export default {
   background-color: $color-light-blue;
   color: $color-white;
 }
-
-// .filter:hover {
-//   background: lightgray;
-//   color: $color-dark-blue;
-// }
-
 .projects {
   margin-bottom: 5rem;
   margin-top: 2.5rem;
