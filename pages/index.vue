@@ -25,6 +25,7 @@
     </div>
     <advantages />
     <gallery-card />
+    <work-process />
     <question />
     <reviews />
   </div>
@@ -36,6 +37,7 @@ import GalleryCard from "@/components/GalleryCard";
 import Question from "@/components/Question";
 import Reviews from "@/components/Reviews";
 import ModalQuestion from "@/components/ModalQuestion";
+import WorkProcess from "~/components/WorkProcess";
 export default {
   data: () => ({
     modalQuestionOpen: false,
@@ -46,6 +48,7 @@ export default {
     Question,
     Reviews,
     ModalQuestion,
+    WorkProcess,
   },
   methods: {
     openModalQuestion() {
