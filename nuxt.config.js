@@ -55,6 +55,7 @@ export default {
     { src: "plugins/swiper", ssr: false },
     { src: "plugins/vue-gallery.js", mode: "client" },
     { src: "plugins/vue-lazyload.js" },
+    { src: "plugins/vue-lazytube.js" },
   ],
   /*
   ** Auto import components
