@@ -22,10 +22,13 @@
           <p class="process__description">{{ processItem.description }}</p>
           <img
             class="process__next-icon"
-            :src="
-              require(`@/static/images/svg/process/${processItem.arrow}.svg`)
-            "
-            alt=""
+            src="@/static/images/svg/process/right-drawn-arrow.svg"
+            alt="asd"
+          />
+          <img
+            class="process__next-icon-down"
+            src="@/static/images/svg/process/down.svg"
+            alt="Proc"
           />
         </div>
       </div>
@@ -74,14 +77,24 @@ export default {
   justify-content: center;
   height: 40rem;
   z-index: 99;
+  @include respond(phone) {
+    height: 100%;
+    padding: 1rem;
+  }
 }
 .process__item {
   flex: 0 1 30%;
-  font-size: 1.8rem;
   display: flex;
   flex-direction: column;
   margin: 0 1.5rem;
   position: relative;
+  @include respond(tab-port) {
+    flex: 0 1 28%;
+  }
+  @include respond(phone) {
+    flex: 0 1 80%;
+    margin: 2rem 0;
+  }
   &:nth-child(1) {
     align-self: flex-end;
   }
@@ -92,6 +105,9 @@ export default {
     align-self: flex-start;
     .process__next-icon {
       display: none;
+    }
+    .process__next-icon-down {
+        display: none;
     }
   }
 }
@@ -104,16 +120,29 @@ export default {
   width: 7rem;
 }
 .process__title {
+  font-size: 2.4rem;
   font-weight: $font-bold;
   margin-bottom: 1.5rem;
 }
 .process__description {
   font-weight: $font-regular;
+  font-size: 1.8rem;
 }
 .process__next-icon {
   width: 5rem;
   position: absolute;
   top: 0;
   right: 0;
+  @include respond(phone) {
+    display: none;
+  }
+}
+.process__next-icon-down {
+    display: none;
+    width: 5rem;
+    margin-top: 1rem;
+    @include respond (phone) {
+        display: block;
+    }
 }
 </style>
