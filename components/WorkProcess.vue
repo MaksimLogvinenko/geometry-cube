@@ -93,7 +93,7 @@ export default {
   }
   @include respond(phone) {
     flex: 0 1 80%;
-    margin: 2rem 0;
+    margin: 0 0 2.5rem 0;
   }
   &:nth-child(1) {
     align-self: flex-end;

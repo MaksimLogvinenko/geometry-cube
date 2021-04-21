@@ -3,12 +3,8 @@
     <div class="container">
       <div class="page-wrap">
         <h1 class="page-title">Bring Joy To Those Around You</h1>
-        <p class="page-subtitle">
-          We can help you to change lives and truly make an impact on others
-        </p>
       </div>
       <div class="contact-form">
-        <div class="contact-form__title">Bring Joy To Those Around You</div>
         <ValidationObserver v-slot="{ invalid }">
           <form class="contact-form__wrapper">
             <ValidationProvider
@@ -17,9 +13,8 @@
               rules="required|alpha_spaces"
               class="contact-form__group"
             >
-              <label for="">Last Name <span>*</span></label>
               <p class="form__error">{{ errors[0] }}</p>
-              <input type="text" v-model="name" />
+              <input type="text" v-model="name" placeholder="Введите имя" />
             </ValidationProvider>
 
             <ValidationProvider
@@ -28,9 +23,18 @@
               rules="required|email"
               class="contact-form__group"
             >
-              <label for="">Email <span>*</span></label>
               <p class="form__error">{{ errors[0] }}</p>
-              <input type="email" v-model="email" />
+              <input type="email" v-model="email" placeholder="Введите Email" />
+            </ValidationProvider>
+
+            <ValidationProvider
+              v-slot="{ errors }"
+              name="name"
+              rules="required|email"
+              class="contact-form__group"
+            >
+              <p class="form__error">{{ errors[0] }}</p>
+              <input type="email" v-model="email" placeholder="Введите Email" />
             </ValidationProvider>
 
             <ValidationProvider
@@ -39,22 +43,20 @@
               rules="required|digits:12"
               class="contact-form__group"
             >
-              <label for="">Phone <span>*</span></label>
               <p class="form__error">{{ errors[0] }}</p>
               <input type="text" v-model="numbers" />
             </ValidationProvider>
 
-            <div class="contact-form__group">
-              <label for="">Name <span>*</span></label>
-              <textarea required name="" id="" cols="30" rows="3"></textarea>
+            <div class="contact-form__group contact-form__textarea">
+              <textarea required name="" id="" cols="30" rows="7"></textarea>
             </div>
-            <button
-              :disabled="invalid"
-              type="submit"
-              class="btn btn--big btn--secondary"
-            >
-              Send message
-            </button>
+          <button
+            :disabled="invalid"
+            type="submit"
+            class="btn btn--big btn--secondary btn--full"
+          >
+            Send message
+          </button>
           </form>
         </ValidationObserver>
       </div>
@@ -64,7 +66,12 @@
 
 <script>
 import { extend } from "vee-validate";
-import { required, email, alpha_spaces, digits } from "vee-validate/dist/rules";
+import {
+  required,
+  email,
+  alpha_spaces,
+  digits,
+} from "vee-validate/dist/rules";
 import { ValidationProvider, ValidationObserver } from "vee-validate";
 
 extend("email", {
@@ -104,40 +111,26 @@ export default {
   position: relative;
   background-color: $color-dark-gray;
 }
-.contact-form {
-  background-image: linear-gradient(
-      105deg,
-      rgba(255, 255, 255, 0.7) 65%,
-      transparent 65%
-    ),
-    url("@/static/images/form-bg.jpg");
-  padding: 4rem;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: $border-radius-default;
-  box-shadow: $shadow-default;
-}
-.contact-form__title {
-  font-size: 3.6rem;
-  font-weight: $font-semibold;
-  margin-bottom: 1.4rem;
+.contact-form__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .contact-form__group {
   display: flex;
+  position: relative;
   flex-direction: column;
-  label {
-    color: $color-light-blue;
-    font-size: 1.8rem;
-    font-weight: $font-light;
-    margin-bottom: 0.7rem;
-    span {
-        color: red;
-    }
+  width: 48%;
+  margin: 0 1rem 1.2rem 0;
+  @include respond (phone) {
+    width: 100%;
+  }
+  span {
+    color: red;
   }
   input,
-  textarea {
-    width: 50rem;
+  textarea,
+  select {
     padding: 2rem;
     font-size: 1.8rem;
     outline: none;
@@ -145,14 +138,14 @@ export default {
     border-radius: $border-radius-default;
     box-shadow: $shadow-default;
     margin-bottom: 1.4rem;
-    @include respond (phone) {
-        width: 100%;
-    }
   }
 }
 .form__error {
+  position: absolute;
   color: red;
   font-size: 1.4rem;
+  top: -2rem;
+  left: 0;
 }
 button:disabled {
   opacity: 0.5;
@@ -161,5 +154,13 @@ button:disabled {
     background-color: lighten($color-light-blue, 0%);
     cursor: not-allowed;
   }
+}
+.contact-form__textarea {
+  width: 100%;
+}
+::placeholder {
+  font-weight: $font-semibold;
+  color: $color-secondary;
+  opacity: 0.4;
 }
 </style>
