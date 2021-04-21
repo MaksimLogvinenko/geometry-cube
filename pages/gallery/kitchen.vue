@@ -14,14 +14,14 @@
       </div>
       <gallery :images="images" :index="index" @close="index = null"></gallery>
       <div class="gallery-kitchen">
-        <img
-          class="gallery-kitchen-container"
-          v-for="(image, imageIndex) in images"
-          :key="imageIndex"
-          :src="image"
-          @click="index = imageIndex"
-          :alt="image.alt"
-        />
+          <img
+            class="gallery-kitchen-container"
+            v-for="(image, imageIndex) in images"
+            :key="image.src"
+            v-lazy="image"
+            @click="index = imageIndex"
+            :alt="image.alt"
+          />
       </div>
     </div>
   </section>
@@ -39,6 +39,16 @@ export default {
         require("@/static/images/gallery/kitchen/4.jpeg"),
         require("@/static/images/gallery/kitchen/5.jpeg"),
         require("@/static/images/gallery/kitchen/6.jpeg"),
+        require("@/static/images/gallery/kitchen/8.jpg"),
+        require("@/static/images/gallery/kitchen/9.jpg"),
+        require("@/static/images/gallery/kitchen/10.jpg"),
+        require("@/static/images/gallery/kitchen/11.jpg"),
+        require("@/static/images/gallery/kitchen/12.jpg"),
+        require("@/static/images/gallery/kitchen/13.jpg"),
+        require("@/static/images/gallery/kitchen/14.jpg"),
+        require("@/static/images/gallery/kitchen/15.jpg"),
+        require("@/static/images/gallery/kitchen/2.jpeg"),
+        require("@/static/images/gallery/kitchen/5.jpeg"),
       ],
       index: null,
     };
