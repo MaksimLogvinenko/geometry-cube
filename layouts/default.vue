@@ -1,5 +1,6 @@
 <template>
   <div>
+    <scroll-to-top />
     <navbar />
     <Nuxt />
     <footer-section />
