@@ -14,14 +14,14 @@
       </div>
       <gallery :images="images" :index="index" @close="index = null"></gallery>
       <div class="gallery-kitchen">
-          <img
-            class="gallery-kitchen-container"
-            v-for="(image, imageIndex) in images"
-            :key="image.src"
-            v-lazy="image"
-            @click="index = imageIndex"
-            :alt="image.alt"
-          />
+        <img
+          class="gallery-kitchen-container"
+          v-for="(image, imageIndex) in images"
+          :key="image.src"
+          v-lazy="image"
+          @click="index = imageIndex"
+          :alt="image.alt"
+        />
       </div>
     </div>
   </section>
@@ -65,22 +65,23 @@ export default {
   flex-wrap: wrap;
 }
 .gallery-kitchen-container {
-  margin-bottom: 3.2rem;
-  padding-left: 1.6rem;
-  padding-right: 1.6rem;
   flex: 0 0 33.33333%;
   max-width: 33.33333%;
-  align-items: stretch;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+  position: relative;
   cursor: pointer;
   object-fit: cover;
   object-position: center;
   height: 30rem;
+  &:hover {
+    transition: .3s;
+    opacity: .4;
+    position: relative;
+  }
   @include respond(tab-port) {
     flex: 0 0 50%;
     max-width: 50%;
-    margin-bottom: 1.6rem;
-    padding-left: 0.8rem;
-    padding-right: 0.8rem;
   }
   @include respond(phone) {
     flex: 0 0 100%;
@@ -100,5 +101,9 @@ export default {
     font-size: 2.4rem;
     color: $color-dark-blue;
   }
+}
+.fa-search {
+  position: relative;
+  z-index: 99;
 }
 </style>

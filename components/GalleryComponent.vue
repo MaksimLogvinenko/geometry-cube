@@ -7,9 +7,7 @@
         class="gallery__link"
         v-for="galleryLink in galleryLinks"
         :key="galleryLink.title"
-        :style="{
-          'background-image': 'url(' + galleryLink.img + ')',
-        }"
+        v-lazy:background-image="galleryLink.img"
       >
         <span class="gallery__number"></span>
         <h3 class="gallery__title">{{ galleryLink.title }}</h3>
@@ -62,7 +60,6 @@ a {
   }
   @include respond(phone) {
     grid-template-columns: repeat(1, 1fr);
-    // grid-template-rows: repeat(1, 1fr);
   }
 }
 .gallery__link {
@@ -73,40 +70,41 @@ a {
   background-repeat: no-repeat;
   border-radius: $border-radius-default;
   padding: 2rem;
-  @include respond (phone) {
+  overflow: hidden;
+  @include respond(phone) {
     height: 25rem;
   }
   &:nth-child(1) {
     grid-column: 1 / 3;
-    @include respond (tab-port) {
+    @include respond(tab-port) {
       grid-column: 1 / 2;
     }
-    @include respond (phone) {
+    @include respond(phone) {
       grid-column: 1 / 1;
     }
   }
   &:nth-child(4) {
     grid-column: 2 / 4;
-    @include respond (tab-port) {
+    @include respond(tab-port) {
       grid-column: 2 / 3;
     }
-    @include respond (phone) {
+    @include respond(phone) {
       grid-column: 1 / 1;
     }
   }
   &:nth-child(2) {
-    @include respond (tab-port) {
+    @include respond(tab-port) {
       grid-column: 2 / 3;
     }
-    @include respond (phone) {
+    @include respond(phone) {
       grid-column: 1 / 1;
     }
   }
   &:nth-child(3) {
-    @include respond (tab-port) {
+    @include respond(tab-port) {
       grid-column: 1 / 2;
     }
-    @include respond (phone) {
+    @include respond(phone) {
       grid-column: 1 / 1;
     }
   }

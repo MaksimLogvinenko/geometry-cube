@@ -43,7 +43,7 @@ export default {
       {
         arrow: "right-drawn-arrow",
         img: "call",
-        title: "Choose a Fundraiser",
+        title: "Choose a Fundraiser 1",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididuntut labore et dolore m",
         alt: "Процесс 1",
@@ -51,7 +51,7 @@ export default {
       {
         arrow: "right-drawn-arrow",
         img: "online-question",
-        title: "Choose a Fundraiser",
+        title: "Choose a Fundraiser 2",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididuntut labore et dolore m",
         alt: "Процесс 1",
@@ -59,7 +59,7 @@ export default {
       {
         arrow: "right-drawn-arrow",
         img: "write-letter",
-        title: "Choose a Fundraiser",
+        title: "Choose a Fundraiser 3",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididuntut labore et dolore m",
         alt: "Процесс 1",
