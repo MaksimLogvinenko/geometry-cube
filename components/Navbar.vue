@@ -147,7 +147,7 @@ export default {
 }
 .menu__group-mobile {
   border-top: 2px solid $color-white;
-  background-color: $color-secondary;
+  background: linear-gradient(180deg, rgba(33,36,69,1) 0%, rgba(11,11,130,1) 100%);
   position: absolute;
   width: 100%;
   height: 100vh;

@@ -96,10 +96,10 @@ export default {
 
 <style lang="scss" scoped>
 .modal-question-bg {
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
   z-index: 999;
   width: 100%;
   height: 100vh;

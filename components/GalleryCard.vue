@@ -7,12 +7,12 @@
       <swiper class="swiper gallery-card" :options="swiperOption">
         <swiper-slide
           class="gallery-card__item"
-          v-for="(galleryCard, galleryCardIndex) of galleryCards"
+          v-for="(galleryCard, galleryCardIndex) in galleryCards"
           :key="galleryCardIndex"
         >
           <img
-            src="@/static/images/gallery-card.jpg"
-            alt=""
+            :src="require(`@/static/images/gallery/${galleryCard.img}`)"
+            :alt="galleryCard.alt"
             class="gallery-card__image"
           />
           <div class="gallery-card__content">
@@ -20,7 +20,12 @@
               {{ galleryCard.title }}
             </h3>
             <div class="gallery-card__buttons">
-              <a href="#" class="btn btn--primary btn--small">Open Gallery</a>
+              <router-link
+                tag="a"
+                :to="`/gallery${galleryCard.link}`"
+                class="btn btn--primary btn--small"
+                >Open Gallery</router-link
+              >
               <a href="#" class="btn btn--message"
                 ><img src="@/static/images/svg/message.svg" alt=""
               /></a>
@@ -65,18 +70,30 @@ export default {
       {
         title: "Plant Trees For A Greener Future",
         tags: "#cool #pool #kitchen",
+        img: "1.jpeg",
+        alt: "Hello",
+        link: "/kitchen",
       },
       {
         title: "Plant Trees For A Stubelu Stru Ori",
         tags: "#cool #pool #kitchen",
+        img: "2.jpeg",
+        alt: "Hello",
+        link: "/kitchen",
       },
       {
         title: "Plant Trees For A Greener Future",
         tags: "#cool #pool #kitchen",
+        img: "3.jpeg",
+        alt: "Hello",
+        link: "/kitchen",
       },
       {
         title: "Plant Trees For A Stubelu Stru Ori",
         tags: "#cool #pool #kitchen",
+        img: "4.jpeg",
+        alt: "Hello",
+        link: "/kitchen",
       },
     ],
   }),
@@ -101,6 +118,7 @@ export default {
   height: 18rem;
   border-radius: 10px 10px 0 0;
   width: 100%;
+  object-fit: cover;
   @include respond(phone) {
     height: 30rem;
   }

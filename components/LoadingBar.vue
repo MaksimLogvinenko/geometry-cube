@@ -1,10 +1,8 @@
 <template>
   <transition name="fade">
-    <div v-if="loading" class="preloader">
-      <div class="preloader-container">
-        <span class="animated-preloader"></span>
+      <div v-if="loading" id="preloader">
+        <div id="loader"></div>
       </div>
-    </div>
   </transition>
 </template>
 
@@ -25,60 +23,77 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.preloader {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
+#preloader {
+  background-color: $color-white;
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 99999;
-  background: white;
-  text-align: center;
-  .preloader-container {
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-    margin: auto;
-    position: absolute;
-    top: 44%;
-    left: 0;
-    position: relative;
-    .animated-preloader {
-      display: inline-block;
-      width: 100px;
-      height: 100px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: $color-dark-blue;
-      @include round(50em);
-      &:after {
-        content: "";
-        display: inline-block;
-        width: 100px;
-        height: 100px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        @include round(50em);
-        background: white;
-        animation: preloader-inside-white 1s ease-in-out infinite;
-      }
-      &:before {
-        content: "";
-        display: inline-block;
-        width: 100px;
-        height: 100px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 10;
-        @include round(50em);
-        background: $color-dark-blue;
-        animation: preloader-inside-red 1s ease-in-out infinite;
-      }
-    }
+}
+#loader {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #00E8BE;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+#loader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #00ad8e;
+  -webkit-animation: spin 3s linear infinite;
+  animation: spin 3s linear infinite;
+}
+#loader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #0f584b;
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 </style>
