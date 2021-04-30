@@ -4,7 +4,7 @@
       <div class="page-wrap">
         <h1 class="page-title">Bring Joy To Those Around You</h1>
       </div>
-      <div class="reviews-wrapper">
+      <lazy-component class="reviews-wrapper">
         <swiper class="swiper reviews" :options="swiperComments">
           <swiper-slide
             v-for="(comment, commentIndex) of comments"
@@ -35,7 +35,7 @@
           </swiper-slide>
           <div class="swiper-pagination" slot="pagination"></div>
         </swiper>
-      </div>
+      </lazy-component>
     </div>
   </section>
 </template>

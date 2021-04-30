@@ -37,7 +37,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @include respond (tab-port) {
+  @include respond(tab-port) {
     flex-direction: column;
   }
 }
@@ -45,7 +45,7 @@ export default {
 .video__link {
   flex: 0 1 50%;
   padding: 1rem;
-  @include respond (tab-port) {
+  @include respond(tab-port) {
     width: 100%;
   }
 }

@@ -39,7 +39,7 @@ import Question from "@/components/Question";
 import Reviews from "@/components/Reviews";
 import ModalQuestion from "@/components/ModalQuestion";
 import WorkProcess from "~/components/WorkProcess";
-import VideoDesign from '~/components/VideoDesign';
+import VideoDesign from "~/components/VideoDesign";
 export default {
   data: () => ({
     modalQuestionOpen: false,

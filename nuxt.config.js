@@ -57,6 +57,7 @@ export default {
     { src: "plugins/vue-gallery.js", mode: "client" },
     { src: "plugins/vue-lazyload.js" },
     { src: "plugins/vue-lazytube.js" },
+    { src: "plugins/vuelidate.js" },
   ],
   /*
   ** Auto import components
@@ -81,11 +82,5 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
-    transpile: [
-      "vee-validate/dist/rules"
-    ],
-    extend(config, ctx) {
-      // ...
-    }
   },
 }

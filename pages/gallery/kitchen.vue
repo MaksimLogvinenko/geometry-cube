@@ -13,16 +13,16 @@
         </nuxt-link>
       </div>
       <gallery :images="images" :index="index" @close="index = null"></gallery>
-      <div class="gallery-kitchen">
-        <img
-          class="gallery-kitchen-container"
-          v-for="(image, imageIndex) in images"
-          :key="image.src"
-          v-lazy="image"
-          @click="index = imageIndex"
-          :alt="image.alt"
-        />
-      </div>
+        <div class="gallery-kitchen">
+          <img
+            class="gallery-kitchen-container"
+            v-for="(image, imageIndex) in images"
+            :key="image.imageIndex"
+            v-lazy="image"
+            @click="index = imageIndex"
+            :alt="image.alt"
+          />
+        </div>
     </div>
   </section>
 </template>
@@ -65,23 +65,24 @@ export default {
   flex-wrap: wrap;
 }
 .gallery-kitchen-container {
-  flex: 0 0 33.33333%;
-  max-width: 33.33333%;
-  padding: 0 1rem;
-  margin-bottom: 2rem;
+  flex: 0 0 32.4%;
+  max-width: 32.4%;
+  margin: 0 0.5rem 2rem 0.5rem;
   position: relative;
   cursor: pointer;
   object-fit: cover;
   object-position: center;
   height: 30rem;
+  box-shadow: $shadow-default;
+  border-radius: $border-radius-default;
   &:hover {
-    transition: .3s;
-    opacity: .4;
+    transition: 0.3s;
+    opacity: 0.4;
     position: relative;
   }
   @include respond(tab-port) {
-    flex: 0 0 50%;
-    max-width: 50%;
+    flex: 0 0 48.5%;
+    max-width: 48.5%;
   }
   @include respond(phone) {
     flex: 0 0 100%;

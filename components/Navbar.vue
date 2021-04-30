@@ -2,7 +2,7 @@
   <div>
     <div class="navbar-mobile">
       <div class="nav-mobile">
-        <nuxt-link tag="a" to="/" href="#" class="nav__logo-mobile"
+        <nuxt-link tag="a" to="/" class="nav__logo-mobile"
           ><img src="../static/images/svg/logo.svg" alt=""
         /></nuxt-link>
         <h4 class="nav-logo__title">QubeFeatures</h4>
@@ -67,7 +67,7 @@ export default {
     $route() {
       setTimeout(() => {
         this.showNav = false;
-      }, 300);
+      }, 100);
     },
   },
   methods: {},
@@ -138,7 +138,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   position: relative;
-  z-index: 999;
+  z-index: 9999;
 }
 .nav-logo__title {
   font-size: 1.8rem;
@@ -147,13 +147,13 @@ export default {
 }
 .menu__group-mobile {
   border-top: 2px solid $color-white;
-  background: linear-gradient(180deg, rgba(33,36,69,1) 0%, rgba(11,11,130,1) 100%);
+  background: linear-gradient(180deg, rgba(33,36,69,1) 60%, rgba(11,11,130,1) 100%);
   position: absolute;
   width: 100%;
-  height: 100vh;
-  z-index: 99;
+  z-index: 999;
   display: flex;
   justify-content: center;
+  padding: 6rem 0;
   align-items: center;
   flex-direction: column;
   transition: 0.3s;
@@ -166,7 +166,7 @@ export default {
   list-style: none;
 }
 .menu__link-mobile {
-  padding: 2rem 1rem;
+  padding: 2rem 3rem;
   margin-bottom: 2rem;
   margin-right: 2rem;
 }
