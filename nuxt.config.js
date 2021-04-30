@@ -9,7 +9,9 @@ export default {
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
   */
-
+  generate: {
+    fallback: true
+  },
   /*
   ** Headers of the page
   ** See https://nuxtjs.org/api/configuration-head
