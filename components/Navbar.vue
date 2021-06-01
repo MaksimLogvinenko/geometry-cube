@@ -1,13 +1,11 @@
 <template>
   <div>
-          <button @click="changeLanguage('en')">EN</button>
-      <button @click="changeLanguage('ru')">RU</button>
     <div class="navbar-mobile">
       <div class="nav-mobile">
         <nuxt-link tag="a" to="/" class="nav__logo-mobile"
           ><img src="../static/images/svg/logo.svg" alt=""
         /></nuxt-link>
-        <h4 class="nav-logo__title">{{ $t('text') }}</h4>
+        <h4 class="nav-logo__title">QubeFeatures</h4>
         <a @click.prevent="showNav = !showNav" href="#"
           ><img src="@/static/images/svg/bar.svg" alt=""
         /></a>
@@ -22,8 +20,14 @@
           class="menu__link menu__link-mobile"
           :exact="link.exact"
         >
-          <a class="menu__item menu__item-mobile">{{ link.title }}</a>
+          <a class="menu__item menu__item-mobile">{{
+            $t("navbar.menu." + link.title)
+          }}</a>
         </nuxt-link>
+        <div class="language-mobile">
+          <button class="btn-language btn-language__mobile" @click="changeLanguage('ua')">UA</button>
+          <button class="btn-language btn-language__mobile" @click="changeLanguage('ru')">RU</button>
+        </div>
       </ul>
     </div>
 
@@ -47,8 +51,16 @@
                 class="menu__link"
                 :exact="link.exact"
               >
-                <a class="menu__item">{{ link.title }}</a>
+                <a class="menu__item">{{ $t("navbar.menu." + link.title) }}</a>
               </nuxt-link>
+              <div class="language">
+                <button class="btn-language" @click="changeLanguage('ua')">
+                  UA
+                </button>
+                <button class="btn-language" @click="changeLanguage('ru')">
+                  RU
+                </button>
+              </div>
             </ul>
           </div>
         </div>
@@ -61,10 +73,10 @@
 export default {
   data: () => ({
     links: [
-      { title: "Home", url: "/", exact: true },
-      { title: "About Us", url: "/about" },
-      { title: "Gallery", url: "/gallery" },
-      { title: "Contact", url: "/contact" },
+      { title: "link-1", url: "/", exact: true },
+      { title: "link-2", url: "/about" },
+      { title: "link-3", url: "/gallery" },
+      { title: "link-4", url: "/contact" },
     ],
     showNav: false,
   }),
@@ -111,6 +123,7 @@ export default {
   &__group {
     list-style: none;
     display: flex;
+    align-items: center;
   }
 
   &__link {
@@ -154,6 +167,21 @@ export default {
   color: $color-white;
   text-transform: uppercase;
 }
+.language {
+  margin-left: 4rem;
+}
+.btn-language {
+  background-color: transparent;
+  color: $color-secondary;
+  font-weight: $font-bold;
+  border: none;
+  background-color: $color-primary;
+  padding: 0.5rem;
+  cursor: pointer;
+  &__mobile {
+    margin: 0 1rem;
+  }
+}
 .menu__group-mobile {
   border-top: 2px solid $color-white;
   background: linear-gradient(180deg, #212445 40%, #262d7f 100%);
@@ -181,5 +209,8 @@ export default {
 }
 .menu__item-mobile {
   font-size: 2.4rem;
+}
+.language-mobile {
+  display: flex;
 }
 </style>

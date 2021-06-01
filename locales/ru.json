@@ -1,8 +1,30 @@
 {
     "navbar": {
-        "link-1": "Главная",
-        "link-2": "Про нас",
-        "link-3": "Галерея",
-        "link-4": "Контакты"
+        "menu": {
+            "link-1": "Главная",
+            "link-2": "О нас",
+            "link-3": "Галерея",
+            "link-4": "Контакты"
+        }
+    },
+    "header": {
+        "subtitle": "Make A Difference",
+        "title": "Let’s Create <br> A Better Tomorrow",
+        "button": "Send Mail"
+    },
+    "modalQuestion": {
+        "title": "Задать вопрос",
+        "name": "Введите имя",
+        "email": "Введите Email",
+        "phone": "Введите номер телефона",
+        "message": "Введите сообщение",
+        "button": "Отправить",
+        "error": {
+            "require": "Это поле обязательное",
+            "email": "Введите коректный Email",
+            "number": "Введите коректный номер",
+            "fullNumber": "Введите полный номер",
+            "maxNumber": "Введите меньше 12 символов"
+        }
     }
 }

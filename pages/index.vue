@@ -9,16 +9,14 @@
     <div class="header">
       <div class="header-content">
         <div class="container">
-          <h2 class="header-subtitle">Make A Difference</h2>
-          <h1 class="header-title">
-            Let’s Create A <br />
-            Better Tomorrow
+          <h2 class="header-subtitle">{{ $t('header.subtitle') }}</h2>
+          <h1 class="header-title" v-html="$t('header.title')">
           </h1>
           <a
             href="#"
             @click.prevent="openModalQuestion"
             class="btn btn--primary btn--big"
-            >QubeFeatures
+            >{{ $t('header.button') }}
           </a>
         </div>
       </div>

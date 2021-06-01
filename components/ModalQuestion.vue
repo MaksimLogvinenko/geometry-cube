@@ -6,7 +6,7 @@
     <transition name="fade">
       <div class="modal-question">
         <i class="fas fa-times" @click="closeModalQuestion"></i>
-        <h3 class="modal-question__title">Задать вопрос</h3>
+        <h3 class="modal-question__title">{{ $t('modalQuestion.title') }}</h3>
 
         <form action="" @submit.prevent="checkForm">
           <div>
@@ -17,11 +17,11 @@
               <input
                 class="form__input"
                 v-model.trim="$v.form.name.$model"
-                placeholder="Введите имя"
+                :placeholder="$t('modalQuestion.name')"
               />
             </div>
             <div class="form__error" v-if="$v.form.name.$dirty && !$v.form.name.required">
-              Это поле обязательное
+              {{ $t('modalQuestion.error.require') }}
             </div>
           </div>
 
@@ -33,14 +33,14 @@
               <input
                 class="form__input"
                 v-model.trim="$v.form.email.$model"
-                placeholder="Введите Email"
+                :placeholder="$t('modalQuestion.email')"
               />
             </div>
             <div class="form__error" v-if="$v.form.email.$dirty && !$v.form.email.required">
-              Это поле обязательное
+              {{ $t('modalQuestion.error.require') }}
             </div>
             <div class="form__error" v-if="$v.form.email.$dirty && !$v.form.email.email">
-              Введите коректный Email
+              {{ $t('modalQuestion.error.email') }}
             </div>
           </div>
 
@@ -52,20 +52,20 @@
               <input
                 class="form__input"
                 v-model.trim="$v.form.phone.$model"
-                placeholder="Введите Email"
+                :placeholder="$t('modalQuestion.phone')"
               />
             </div>
             <div class="form__error" v-if="$v.form.phone.$dirty && !$v.form.phone.required">
-              Это поле обязательное
+              {{ $t('modalQuestion.error.require') }}
             </div>
             <div class="form__error" v-if="$v.form.phone.$dirty && !$v.form.phone.numeric">
-              Введите коректный номер
+              {{ $t('modalQuestion.error.number') }}
             </div>
             <div class="form__error" v-if="$v.form.phone.$dirty && !$v.form.phone.minLength">
-              Введите полный номер
+              {{ $t('modalQuestion.error.fullNumber') }}
             </div>
             <div class="form__error" v-if="!$v.form.phone.maxLength">
-              Не больше 12 символов
+              {{ $t('modalQuestion.error.maxNumber') }}
             </div>
           </div>
 
@@ -77,12 +77,12 @@
               class="form__input"
               v-model.trim="form.text"
               required
-              placeholder="Введите сообщение"
+              :placeholder="$t('modalQuestion.message')"
               rows="5"
             />
           </div>
           <button type="submit" class="btn btn--secondary btn--big btn--full">
-            Отправить
+            {{ $t('modalQuestion.button') }}
           </button>
         </form>
       </div>
