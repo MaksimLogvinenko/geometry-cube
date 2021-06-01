@@ -18,7 +18,7 @@
             href="#"
             @click.prevent="openModalQuestion"
             class="btn btn--primary btn--big"
-            >Download Now
+            >QubeFeatures
           </a>
         </div>
       </div>

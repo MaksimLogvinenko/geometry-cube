@@ -60,6 +60,7 @@ export default {
     { src: "plugins/vue-lazyload.js" },
     { src: "plugins/vue-lazytube.js" },
     { src: "plugins/vuelidate.js" },
+    { src: "~/plugins/i18n.js"}
   ],
   /*
   ** Auto import components
@@ -70,7 +71,8 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
-  ],
+    /* other modules */
+   ],
   /*
   ** Nuxt.js modules
   */

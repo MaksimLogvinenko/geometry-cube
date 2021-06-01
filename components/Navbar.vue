@@ -1,11 +1,13 @@
 <template>
   <div>
+          <button @click="changeLanguage('en')">EN</button>
+      <button @click="changeLanguage('ru')">RU</button>
     <div class="navbar-mobile">
       <div class="nav-mobile">
         <nuxt-link tag="a" to="/" class="nav__logo-mobile"
           ><img src="../static/images/svg/logo.svg" alt=""
         /></nuxt-link>
-        <h4 class="nav-logo__title">QubeFeatures</h4>
+        <h4 class="nav-logo__title">{{ $t('text') }}</h4>
         <a @click.prevent="showNav = !showNav" href="#"
           ><img src="@/static/images/svg/bar.svg" alt=""
         /></a>
@@ -73,7 +75,11 @@ export default {
       }, 100);
     },
   },
-  methods: {},
+  methods: {
+    changeLanguage(lang) {
+      this.$i18n.locale = lang;
+    },
+  },
 };
 </script>
 
