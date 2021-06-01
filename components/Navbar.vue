@@ -29,7 +29,10 @@
       <div class="container">
         <div class="nav">
           <nuxt-link to="/" tag="a" class="nav__logo"
-            ><img src="@/static/images/svg/logo.svg" alt="" />QubeFeatures</nuxt-link
+            ><img
+              src="@/static/images/svg/logo.svg"
+              alt=""
+            />QubeFeatures</nuxt-link
           >
           <div class="nav__menu">
             <ul class="menu__group">
@@ -147,7 +150,7 @@ export default {
 }
 .menu__group-mobile {
   border-top: 2px solid $color-white;
-  background: linear-gradient(180deg, rgba(33,36,69,1) 60%, rgba(11,11,130,1) 100%);
+  background: linear-gradient(180deg, #212445 40%, #262d7f 100%);
   position: absolute;
   width: 100%;
   z-index: 999;

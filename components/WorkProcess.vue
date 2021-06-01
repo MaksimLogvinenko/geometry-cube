@@ -70,6 +70,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.section-work-process {
+  background-color: $color-dark-gray;
+}
 .process {
   position: relative;
   display: flex;

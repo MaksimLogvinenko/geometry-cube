@@ -39,7 +39,7 @@ export default {
         require("@/static/images/gallery/kitchen/4.jpeg"),
         require("@/static/images/gallery/kitchen/5.jpeg"),
         require("@/static/images/gallery/kitchen/6.jpeg"),
-        require("@/static/images/gallery/kitchen/8.jpg"),
+        require("@/static/images/gallery/kitchen/12.jpg"),
         require("@/static/images/gallery/kitchen/9.jpg"),
         require("@/static/images/gallery/kitchen/10.jpg"),
         require("@/static/images/gallery/kitchen/11.jpg"),

@@ -53,7 +53,7 @@
 <script>
 export default {
   data: () => ({
-    currentFilter: "ALL",
+    currentFilter: "ART",
     projects: [
       {
         title: "Artwork",
@@ -101,6 +101,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.section-tabs {
+  background-color: #F2F3F6;
+}
 .filter {
   padding: 0.6rem;
   cursor: pointer;
@@ -122,7 +125,6 @@ export default {
   margin-top: 2.5rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .projects-enter {
@@ -141,15 +143,22 @@ export default {
 }
 .project {
   transition: all 0.3s ease-in-out;
-  margin: 1rem;
   box-shadow: $shadow-default;
   border-radius: $border-radius-default;
-  width: 30%;
+  flex: 0 0 32.4%;
+  max-width: 32.4%;
+  margin: 0 0.5rem 2rem 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 30rem;
   @include respond(tab-port) {
-    width: 40%;
+    flex: 0 0 48.5%;
+    max-width: 48.5%;
+  }
+  @include respond(phone) {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
 
@@ -162,5 +171,6 @@ export default {
 .project-image {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 </style>

@@ -77,7 +77,7 @@
               class="form__input"
               v-model.trim="form.text"
               required
-              placeholder="Введите Email"
+              placeholder="Введите сообщение"
               rows="5"
             />
           </div>
@@ -129,10 +129,18 @@ export default {
       this.$emit("closeModalQuestion");
     },
     checkForm() {
-      this.$v.form.$touch()
-      if(!this.$v.form.$error) {
-        console.log("Валидация усп");
+      if(this.$v.form.$invalid) {
+        this.$v.form.$touch()
+        return
       }
+      const formData = {
+        name: this.form.name,
+        email: this.form.email,
+        phone: this.form.phone,
+        text: this.form.text
+      }
+      console.log(formData);
+      this.$router.push('/contact')
     },
   },
 };
